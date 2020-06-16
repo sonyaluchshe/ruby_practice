@@ -1,0 +1,13 @@
+<div class="grid-x">
+  <div class="cell large-12">
+    <h3>Информация о контакте</h3>
+    <p><b>ФИО:</b><%= @contact.lname %> <%= @contact.fname %> <%= @contact.patronymic %></p>
+    <p><b>Домашний телефон:</b> <%= @contact.home_number %></p>
+    <p><b>Мобильный телефон:</b> <%= @contact.cell_number %></p>
+    <p><b>Адрес:</b> <%= @contact.address %></p>
+    <p><b>День рождения:</b> <%= @contact.dob %></p>
+    <p><b>Пол:</b> <%= @contact.sex %></p>
+    <p><b>Статус:</b> <%= @contact.relation %></p>
+    <a class="button" href="/contacts"> К списку контактов </a>
+  </div>
+</div>

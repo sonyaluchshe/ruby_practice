@@ -1,0 +1,30 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h3>Мои контакты</h3>
+  </div> 
+
+  <% if @contacts.size == 0 %> 
+    <div class="cell large-12 callout warning">
+      Список контактов пуст
+    </div>
+  <% else %> 
+    <div class="grid-x grid-margin-x"> 
+      <% @contacts.each do |contact| %>
+        <div class="card cell large-6">
+          <div class="card-divider">
+            <%= contact.lname %> <%= contact.fname %>
+          </div>
+          <div class="card-section">
+            <p><%= contact.cell_number %></p>
+            <p><%= contact.relation %></p>
+            <p>
+              <a class="button" href="/contacts/<%= contact.id%>"> Больше информации </a> 
+            </p>           
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  
+</div>
+
