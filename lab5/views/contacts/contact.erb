@@ -8,6 +8,9 @@
     <p><b>День рождения:</b> <%= @contact.dob %></p>
     <p><b>Пол:</b> <%= @contact.sex %></p>
     <p><b>Статус:</b> <%= @contact.relation %></p>
-    <a class="button" href="/contacts"> К списку контактов </a>
+
+    <a class="button" href="<%= path(@contact, 'edit')%>"> Изменить </a>
+    <a class="button alert" href="<%= path(@contact, 'delete')%>"> Удалить </a>
+    <a class="button secondary" href="<%= contacts_path %>"> К списку контактов </a>
   </div>
 </div>

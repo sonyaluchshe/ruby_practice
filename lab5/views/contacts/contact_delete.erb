@@ -1,0 +1,17 @@
+<div class="grid-x">
+  <div class="cell lagre-12 alert">
+    Вы уверены, что хотите удалить контакт <b><%= @contact.lname %> <%= @contact.fname %></b>?
+  </div>
+</div>
+
+<% form({ method: :post }, {obj: @parameters }) do |f| %>
+  <div class="grid-x grid-margin-x">  
+    <div class="cell large-12">
+      <%= f.input(:confirmation, type: :checkbox, label: 'Подтверждаю удаление') %>
+    </div>
+    <div>
+      <%= f.button(value: 'Удалить', class: 'alert button') %>
+      <a class="button secondary" href="<%= path(@contact) %>">Отмена</a>
+    </div>
+  </div> 
+<% end %>

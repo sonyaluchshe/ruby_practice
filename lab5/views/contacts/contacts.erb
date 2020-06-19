@@ -1,0 +1,58 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h3>Мои контакты</h3>
+    <a class="button" href="<%= contact_new_path %>">Добавить контакт</a>
+    <a class="button" href="<%= contact_event_path %>">Задать событие</a>
+  </div> 
+
+    <div class="large-12 cell">
+    <% form({ method: :get }, { obj: @params }) do |f| %>
+      <div class="grid-x grid-padding-x">
+        <% if @params.failure? %>
+          <div class="large-12 cell callout warning">
+            <p>
+              Параметры фильтра введены неверно, данные не были отфильтрованы
+            </p>
+          </div>
+        <% end %>
+
+        <div class="large-6 cell">
+          <%= f.input(:dob, type: :text, placeholder: '2020-04-25', label: 'Дата') %>
+        </div>
+        <div class="large-12 cell">
+          <%= f.button(value: 'Показать ближайшие дни рождения', class: 'button') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @contacts.size == 0 %> 
+    <div class="cell large-12 callout warning">
+      Список контактов пуст
+    </div>
+  <% else %> 
+    <% if @filtered_contacts.empty? %>
+      <div class="cell large-12 callout warning">
+        Не было найдено ни одного дня рождения.
+      </div>
+    <% else %>
+      <div class="grid-x grid-margin-x"> 
+        <% @contacts.each do |contact| %>
+          <div class="card cell large-6">
+            <div class="card-divider">
+              <%= contact.lname %> <%= contact.fname %>
+            </div>
+            <div class="card-section">
+              <p><%= contact.cell_number %></p>
+              <p><%= contact.relation %></p>
+              <p>
+                <a class="button" href="<%= path(contact) %>"> Больше информации </a> 
+              </p>           
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

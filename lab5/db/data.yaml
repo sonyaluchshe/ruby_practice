@@ -1,0 +1,22 @@
+---
+:contact_list:
+- :id: 1
+  :lname: Романова
+  :fname: Ирина
+  :patronymic: Юрьевна
+  :home_number: 218988
+  :cell_number: 89038255447
+  :address: проспект Толбухина, 26, 63
+  :dob: 1970-09-29
+  :sex: женский
+  :relation: мама
+- :id: 2
+  :lname: Лаврова
+  :fname: Софья
+  :patronymic: Андреевна
+  :home_number: 218988
+  :cell_number: 89092791537
+  :address: проспект Толбухина, 26, 63
+  :dob: 2000-05-18
+  :sex: женский
+  :relation: я

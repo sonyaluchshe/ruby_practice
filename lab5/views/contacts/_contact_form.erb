@@ -1,0 +1,35 @@
+<% form({ method: :post }, {obj: @parameters }) do |f| %>
+  <div class="grid-x grid-margin-x">  
+    <div class="cell large-12">
+      <%= f.input(:lname, type: :text, label: 'Фамилия', placeholder: 'Сергеев') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:fname, type: :text, label: 'Имя', placeholder: 'Сергей') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:patronymic, type: :text, label: 'Отчество', placeholder: 'Сергеевич') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:home_number, type: :text, label: 'Домашний телефон', placeholder: '890978') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:cell_number, type: :text, label: 'Мобильный телефон', placeholder: '8999090909') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:address, type: :text, label: 'Адрес', placeholder: 'село Великое, 13') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:dob, type: :date, label: 'День рождения', placeholder: '2012-03-08') %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:sex, type: :select, label: 'Пол', options: ContactSex.all_sexes, add_blank: :true) %>
+    </div>
+    <div class="cell large-12">
+      <%= f.input(:relation, type: :text, label: 'Статус', placeholder: 'сосед') %>
+    </div>
+    <div>
+      <%= f.button(value: form_type, class: 'success button')%>
+      <a class="button secondary" href="<%= back_location%>">Отмена</a>
+    </div>
+  </div> 
+<% end %>
