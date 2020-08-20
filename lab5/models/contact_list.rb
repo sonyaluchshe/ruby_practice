@@ -26,9 +26,8 @@ class ContactList
                  else
                    @contacts.keys.max + 1
                  end
-    contact = Contact.new(id: contact_id, **parameters.to_h)
-    @contacts[contact_id] = contact
-    contact
+    @contacts[contact_id] = Contact.new(id: contact_id, **parameters.to_h)
+    @contacts[contact_id]
   end
 
   def add_real_contact(contact)
